@@ -75,21 +75,3 @@ page.search('tbody td').each do |td|
   i = (i + 1) % 20
 end
 puts total
-#form = page.forms.first
-
-#link = page.link_with(text: 'Random article')
-
-#form['q'] = 'passport'
-
-#page = form.submit
-
-#page.search('#results h3').each do |h3|
-#puts h3.text.strip
-
-#end
-
-#page = link.click
-
-#puts page.at('h3').text.strip
-
-#puts page.uri

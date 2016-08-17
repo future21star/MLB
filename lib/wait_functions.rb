@@ -3,10 +3,10 @@ def random_wait_tiny
 end
 
 def random_wait_small
-  sleep(2 + (rand(90)/100.0))
+  sleep(2)
 end
 
 def random_wait_medium
-  sleep(1)
+  sleep(3)
 #  sleep(5 + rand(10) + (rand(90)/100.0))
 end

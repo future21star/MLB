@@ -5,5 +5,5 @@ ruby '2.2.4'
 
 gem 'watir'
 gem 'watir-scroll'
+gem 'webdriver-user-agent'
 
-gem 'pry'
