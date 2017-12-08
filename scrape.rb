@@ -75,3 +75,35 @@ page.search('tbody td').each do |td|
   i = (i + 1) % 20
 end
 puts total
+
+For pitchers
+page = mechanize.get('http://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=0&type=8&season=2016&month=0&season1=2016&ind=0&team=0%2cts&rost=&age=&filter=&players=0')
+i = 0
+total = [['id', 'name', 'star']]
+lineup = Array.new(3) 
+page.search('tbody td').each do |td|
+  if i < 2
+    lineup[i] = td.text
+    if i == 1
+      if lineup[0].to_i <= 30
+        lineup[2] = 5
+      end
+      if lineup[0].to_i <= 24
+  lineup[2] = 4
+      end
+      if lineup[0].to_i <= 18
+        lineup[2] = 3
+      end
+      if lineup[0].to_i <= 12
+        lineup[2] = 2
+      end
+      if lineup[0].to_i <= 6
+        lineup[2] = 1
+      end
+      total.push lineup
+      lineup = Array.new(3)
+    end
+  end
+  i = (i + 1) % 21
+end
+puts total
