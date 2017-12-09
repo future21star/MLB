@@ -55,4 +55,28 @@ while index < 30
   random_wait_medium
   random_wait_medium
   random_wait_medium
+ 
+ 
+ 
+while index < 50
+  tbody.spans(css: '.player-first-name')[2..12].each do |first_name|
+    random_wait_medium
+    random_wait_medium
+    random_wait_medium
+    random_wait_medium
+    first_name.when_present.click
+    @browser.div(css: '.lightbox.legacy-lightbox.player-card--legacy').wait_until_present
+    pop_up = @browser.div(css: '.lightbox.legacy-lightbox.player-card--legacy')
+    pop_up.div(css: '.close-button').click
+    #tbody.wait_until_present  
+  end
+  #random_wait_tiny
+  index = index + 1
+  top = 550 * index
+  debugger
+  scroll_bottom_script = 'arguments[0].scrollTop = ' + top.to_s
+  tbody.browser.execute_script(scroll_bottom_script, tbody)
+  random_wait_medium
+  random_wait_medium
+  random_wait_medium 
 end
